@@ -1,0 +1,29 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: interact-app
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: interact-app
+    spec:
+      containers:
+      - name: interact-app
+        image: ocptereg.azurecr.io/interact/app:__buildversion__
+        ports:
+        - containerPort: 80
+      imagePullSecrets:
+      - name: internal
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: interact-lb
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 80
+  selector:
+    app: interact-app

@@ -3,16 +3,16 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
+title: Hello
 subtitle:
 description:
-author: John Doe
-language:
-timezone:
+author: Gabriel Nepomuceno
+language: English (UK)
+timezone: UTC
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com
+url: http://blog.gabrielnepomuceno.com
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -77,4 +77,10 @@ theme: landscape
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type:
+  - type:
+  - type: git
+    repo: https://github.com/Nepomuceno/Nepomuceno.github.io
+    branch: master
+  - type: git
+    repo: https://github.com/Nepomuceno/blog
+    branch: gh-pages

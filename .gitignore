@@ -69,4 +69,6 @@ tmp/
 .idea/
 coverage/
 
+public/
+.deploy_git/
 
