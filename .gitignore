@@ -57,3 +57,16 @@ typings/
 # dotenv environment variables file
 .env
 
+# base OS files
+.DS_Store
+
+# lock files
+yarn.lock
+package-lock.json
+
+# temp files
+tmp/
+.idea/
+coverage/
+
+
