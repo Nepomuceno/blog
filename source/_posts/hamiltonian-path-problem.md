@@ -1,9 +1,11 @@
 ---
 title: The Hamiltonian path problem!
+date: 2018/01/29 01:01:01
 ---
-## The Hamiltonian path problem
 
 I was watching the video on [Numberfile](https://www.youtube.com/watch?v=G1m7goLCJDY) with Matt Parker he proposed a simple problem that you receive all the positive integers up to a certain number and you need to arrange them in a new order so that the sum of any 2 adjacent numbers will be a square number. Spoil alert now I will be giving a valid solution so if you are trying to solve that by yourself go there and try it (maybe the title has given you the idea of the solution already).
+
+<!-- more -->
 
 Matt explains the problem much better than me, so for a better explanation. if you watch the [extra footage](https://youtu.be/7_ph5djCCnM) you would see that Charlie Turner shows that for the numbers greater than 24 util 299 all of them work and there is a conjecture that it would work for all numbers larger than 24.
 
