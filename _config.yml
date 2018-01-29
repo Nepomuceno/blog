@@ -72,7 +72,19 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
+theme: brewski
+theme_config:
+  logo:
+  google_analytics: UA-XXXXXXXX-X
+  copyright:
+    since: 2018
+    name: Gabriel Nepomuceno
+    url: https://www.nepomuceno.me
+  menu:
+    Home: /
+    About: /about
+    GitHub: https://github.com/nepomuceno
+    RSS: /atom.xml
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
