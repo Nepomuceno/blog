@@ -7,8 +7,12 @@ If you are using go ans specially if you come from a .Net background you might b
 
 This are the instructions to install in case you are using windows.
 
-Make sure your go binarties are in the path.
-You should have `<GOPATH>/bin` you your windows `PATH` instructions on how to install go easy on windows can be found [here](http://www.wadewegner.com/2014/12/easy-go-programming-setup-for-windows/)
+<!-- more -->
+
+Make sure your go binaries are in the path.
+You should have `<GOPATH>/bin` you your windows `PATH` instructions on how to install go easy on windows can be found [here](http://www.wadewegner.com/2014/12/easy-go-programming-setup-for-windows/).
+
+On any shell with access to go (powershell or cmd for example)
 
 Get govendor
 ```shell
