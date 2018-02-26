@@ -15,28 +15,33 @@ You should have `<GOPATH>/bin` you your windows `PATH` instructions on how to in
 On any shell with access to go (powershell or cmd for example)
 
 Get govendor
+
 ```shell
 go get -u github.com/kardianos/govendor
 ```
 
 Install govendor
+
 ```shell
 go install github.com/kardianos/govendor
 ```
 
 After that you should be able to check which version you are using from govendor using:
-```
+
+```shell
 govendor --version
 ```
 
 now you just need to use in your go projects
-```
+
+```shell
 govendor init
 ```
 
 and for the dependencies that you want to add
+
 ```shell
 govendor fetch <Your-Dependency>
 ```
 
-(this info was based on my experience and on thhis answwer in stack overflow: https://stackoverflow.com/a/42170134)
+(this info was based on my experience and on [this answer in stack overflow](https://stackoverflow.com/a/42170134))
