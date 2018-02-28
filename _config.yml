@@ -85,6 +85,8 @@ theme_config:
     About: /about
     GitHub: https://github.com/nepomuceno
     RSS: /atom.xml
+  disqus: nepomucenome
+
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
