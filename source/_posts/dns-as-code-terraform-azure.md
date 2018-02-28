@@ -5,7 +5,7 @@ date: 2018/02/28 01:01:01
 
 If your current request for a subdomain requires you to contact the infra team open a ticket and wait for few days until you can test this new cool website on your custom subdomain this might interest you. Even if you are not currently an Azure customer or not currently using terraform this is very easy to setup feature that will help you streamline your domain management.
 
-The code for this example can be found at:
+The code for this example can be found at: [https://github.com/Nepomuceno/sample-terraform-dns](https://github.com/Nepomuceno/sample-terraform-dns)
 
 <!--More-->
 
