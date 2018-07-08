@@ -48,7 +48,7 @@ This should output to you information about the storage library. ok, now we have
 ### Connecting to the table
 
 The first thing that you will need to do it is to connect to the table.
-To connect to the table you will need to create a storage connection you can get your storage connection in the azure portal ![get keys](/images/gettingAccessKeys.png)
+To connect to the table you will need to create a storage connection you can get your storage connection in the Azure portal ![get keys](/images/gettingAccessKeys.png)
 
 #### Storing the secret
 
@@ -79,7 +79,7 @@ dotenv.load();
 const storageClient = storage.createTableService();
 ```
 
-You dont need to specify the connection string because by default the library look for the environment variable called `AZURE_STORAGE_CONNECTION_STRING`
+You don't need to specify the connection string because by default the library look for the environment variable called `AZURE_STORAGE_CONNECTION_STRING`
 
 Now we need to create the table in case it is not available to present:
 
@@ -104,13 +104,13 @@ Now you can execute the code in the console using:
 tsc | node ./index.js
 ```
 
-Now you should have you tyable created in tour storage account.
+Now you should have your table created in tour storage account.
 
 ![storage created](/images/table-created-storage.png)
 
 ### Making it more typescript friendly
 
-Now that we are connecting to the databse lets make it easier to use it and something coloser to what you would expect working with modern libraries.
+Now that we are connecting to the database lets make it easier to use it and something closer to what you would expect working with modern libraries.
 
 First, let's create the storage class `storage.ts`
 
@@ -222,7 +222,7 @@ tsc | node ./index.js
 
 Now that we have the table created and can connect to it time to insert some resources on it.
 
-lets change first and add a new method on our `storage.ts` to the `Storage` class
+let's change first and add a new method on our `storage.ts` to the `Storage` class
 
 ``` typescript
 async AddOrMergeRecord(record: ITableEntity): Promise<ITableEntity> {
@@ -240,11 +240,11 @@ async AddOrMergeRecord(record: ITableEntity): Promise<ITableEntity> {
 }
 ```
 
-Again we are using the same technic to convert the insertOrMergeEntity to be using promise instead of callback.
+Again we are using the same technic to convert the insertOrMergeEntity to be using promise instead of the callback.
 
 This method should be failing now because there are 2 things we need to add because of the way that objects are stored in table storage. In table storage a property it is always one object with 2 properties `$` and `_` being `$` the type to be stored and `_` the value to be stored. More than that another thing that you can see it is that the method accepts only `ITableEntity` this happens because we need to guarantee that the properties of `PartitionKey` and `RowKey` are strings and present in every single object that we need to insert.
 
-So lets add the code to make this work first we are going to add the interface of `ITableEntity` after the last line of our `storage.ts`
+So let's add the code to make this work first we are going to add the interface of `ITableEntity` after the last line of our `storage.ts`
 
 ``` typescript
 export interface ITableEntity {
@@ -256,7 +256,7 @@ export interface ITableEntity {
 
 You are just requesting an object to have this 2 properties the `[key: string]: string | number | boolean | undefined;` allow the object to have any other property of the types supported by table storage.
 
-Now we need to write the code to convert the `ITableEntity` in something that it is supported by table storage fortunatly for us there is a utility helper built in into the library.
+Now we need to write the code to convert the `ITableEntity` in something that it is supported by table storage fortunately for us there is a utility helper built-in into the library.
 
 We are going to add the missing method in the `Storage` class in the `storage.ts`
 
@@ -275,11 +275,11 @@ private convertToTableRecord(entity: ITableEntity) {
 }
 ```
 
-The importent line here to look at it is the `storage.TableUtilities.entityGenerator.EntityProperty` that will transform an value of any type in a value following the needs for the storage library.
+The important line here to look at it is the `storage.TableUtilities.entityGenerator.EntityProperty` that will transform a value of any type in a value following the needs for the storage library.
 
 Time to change our `index.ts`
 
-the new code should be something like this:
+The new code should be something like this:
 
 ``` typescript index.ts
 import { Storage } from "./storage";
@@ -313,9 +313,9 @@ You should have your first record inserted into the table.
 
 There are multiple ways to query the table storage the most common being retrieve a single row by Partition and Row Id.
 
-Lets add this functionality first
+Let's add this functionality first
 
-Again in our `storage.ts` lets add a method to query by both this value.
+Again in our `storage.ts` let's add a method to query by both this value.
 
 ``` typescript
 async GetRecord(partitionKey: string, rowKey: string): Promise<ITableEntity> {
@@ -333,7 +333,7 @@ async GetRecord(partitionKey: string, rowKey: string): Promise<ITableEntity> {
   }
 ```
 
-Again we are using the same strategy of covering a method in something that can be used as a Promise to a more modern javascript way of programing but not that much changes from the method itself.
+Again we are using the same strategy of covering a method in something that can be used as a Promise to a more modern javascript way of programming but not that many changes from the method itself.
 
 Lets change the `index.ts` to use this query. Just include after inserting the entity the following code:
 
@@ -342,7 +342,7 @@ const record = await storage.GetRecord("SamplePartition", "SampleRow");
 console.info(record);
 ```
 
-Now if you compile again (`tsc`) and run (`node ./index.js`) you will see the entity being returned but not exacly what you expected.
+Now if you compile again (`tsc`) and run (`node ./index.js`) you will see the entity being returned but not exactly what you expected.
 
 You are getting somethign like:
 
@@ -358,7 +358,7 @@ You are getting somethign like:
      etag: 'W/"datetime\'2018-07-08T19%3A28%3A12.5744502Z\'"' } }
 ```
 
-That it is not what an object of javascript should look like. so lets get back to our javascript and convert the results in something more javascript like.
+That it is not what an object of javascript should look like. so let's get back to our javascript and convert the results in something more javascript like.
 
 The same way that we created the `convertToTableRecord` we are going to create now the `tableRecordToJavacript` method as a private method in the `Storage` class.
 
@@ -406,12 +406,11 @@ Now when you execute you should get the expected result.
   SampleString: 'Amazing!' }
 ```
 
-
 ### Going forward
 
-Over the next blog posts I hope to explore more query options and how to query for strings and ranges in table storage.
+Over the next blog posts, I hope to explore more query options and how to query for strings and ranges in table storage.
 
-You can find step by step of the instructions in this github repo.
-https://github.com/Nepomuceno/typescript-azure-storage/
+You can find step by step of the instructions in this GitHub repo.
+[https://github.com/Nepomuceno/typescript-azure-storage/](https://github.com/Nepomuceno/typescript-azure-storage/)
 
 Each one of the steps can be download individually in the [release page](https://github.com/Nepomuceno/typescript-azure-storage/releases)
