@@ -28,7 +28,7 @@ You would need to have configured the email server according to what was instruc
 
 ## Configuring SMTP
 
-We are going to connect with your email claint it is to setup smtp server to your email client using smtp.
+We are going to connect with your email client it is to setup smtp server to your email client using smtp.
 
 So in order to do that we need to create some smtp credentials in mailgun and change our dns records.
 
@@ -66,9 +66,9 @@ The basic configuration will be:
 
 This whould be enough to get you sending emails. but most of them will probably arrive in the SPAN but if you want to avaid that follow the next step.
 
-## Avoiding the span folder
+## Avoiding the spam folder
 
-Now you are sending your email trough mailgun so you need to tell the email prodivers in the world that you actually authorized mailgun to do that. and in order to do that you need to change some of your email settings.
+Now you are sending your email through mailgun so you need to tell the email providers in the world that you actually authorized mailgun to do that. and in order to do that you need to change some of your email settings.
 
 first lets get the `sending_dns_records` information part from your domain. To do that just execute:
 
@@ -125,6 +125,6 @@ az network dns record-set cname set-record -z "mydomainname.com" -g "myresourceg
 ## Conclusions
 
 Now you are able to send and receive emails from any custom domain.
-The last step now would be tu automate this steps to create a single script that you could do run all of this without being worried about the configuration.
+The last step now would be to automate these steps to create a single script that you could do run all of this without being worried about the configuration.
 
-The only limitation now would eb the 10,000 free emails per month as part of the free account of mailgun (this counts sending and receiving) so if you go over that you would pay some extra.
+The only limitation now would be the 10,000 free emails per month as part of the free account of mailgun (this counts sending and receiving) so if you go over that you would pay some extra.
