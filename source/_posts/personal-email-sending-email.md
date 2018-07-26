@@ -17,6 +17,11 @@ curl -s --user 'api:YOUR_API_KEY' \
 
 <!-- more -->
 
+## This port is part of a series
+
+- [Part 1] - {% post_link personal-email-with-azure-dns-and-mailgun %}
+- [Part 2] - {% post_link personal-email-sending-email %}
+
 ## Pre Requisites
 
 You would need to have configured the email server according to what was instructed in the previous post ({% post_link personal-email-with-azure-dns-and-mailgun %})

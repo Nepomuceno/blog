@@ -9,6 +9,11 @@ Using [Mailgun](https://mailgun.com) and [Azure DNS](https://azure.microsoft.com
 
 <!-- more -->
 
+## This port is part of a series
+
+- [Part 1] - {% post_link personal-email-with-azure-dns-and-mailgun %}
+- [Part 2] - {% post_link personal-email-sending-email %}
+  
 ## Pre Requisites
 
 What you will need to have:
@@ -193,8 +198,9 @@ Hope you all like and still tuned in at [my twitter](https://twitter.com/gBico) 
 
 Of course, there are limitations when using this:
 
-1. You are only able to receive emails using this technique. I could extend it to use Mailgun to send emails to and I might do it in another blog stay tuned
+1. <s>You are only able to receive emails using this technique. I could extend it to use Mailgun to send emails to and I might do it in another blog stay tuned</s> You can now see hoe to send emails too at: {% post_link personal-email-sending-email %}
 
 2. This is done with a lot of manual steps (coping commands from this post). This could be automated in a simple script but I needed to stop and publish at some time so I decided that I will also leave that for a future post :)
 
 3. Mailgun it is only free up to 10,000 emails per month. but if you are getting more than 10,000 email per month I would suggest first taking a look on why are you receiving that much email and Mailgun still has a great price even above 10,000 emails.
+
